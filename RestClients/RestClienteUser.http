@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0cmFpblN5cyIsInN1YiI6IjEiLCJleHAiOjE3MTkyNjEyNjMsImlhdCI6MTcxOTE3NDg2M30.SWzYxALE0Zkj1AC7B_7Ye2Nra7JIhiU3MdrdErS4OwA99cUC3qWOm-mzbTnELBFA9E9PSRzlcV54_-z3AMPYjQCpS6hKf1FKQehq0NgBa-vnumAbF3RvjKPiYUOQIcwLxH0S_IiZu_G90MvYgCYK9N3oQw6IlX2-4KU2f6sgEwu4sBBbOzNhAz9ZSMMVA-0hguf6PGPq1dO4sbab37JbDcGt0iNHB8FzGsOwi6duCIXdyzu6hM6bKRSst4lBFxS8BuhDXW3T30eLmtooQdfnpk0E5v7ehWHal2GD0g0q9ITLd3OKPHgzTM7g5uGWsrfSEy1zO5OqAOKdYXDKShlJBw
+
+{
+  "name": "Julio Miguel Corrêa",
+  "email": "julioaluno.senai.com",
+  "date_birth": "1986-01-06",
+  "cpf": "111.555.333.44",
+  "password": "123",
+  "role": "ALUNO"
+}
+
+###
