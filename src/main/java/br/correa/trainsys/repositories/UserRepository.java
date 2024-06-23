@@ -1,6 +1,5 @@
 package br.correa.trainsys.repositories;
 
-import br.correa.trainsys.entities.Role;
 import br.correa.trainsys.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
