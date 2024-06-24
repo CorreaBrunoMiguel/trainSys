@@ -13,7 +13,8 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "students")
+@Entity
+@Table(name = "students")
 public class Student {
 
     @Id
@@ -60,10 +61,4 @@ public class Student {
 
     @Size(max = 20)
     private String cep;
-
-    @ManyToOne
-    private Tutor tutor;
-
-    @OneToOne
-    private Workout workout;
 }

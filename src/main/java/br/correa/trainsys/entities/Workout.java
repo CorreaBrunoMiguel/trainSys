@@ -21,19 +21,4 @@ public class Workout {
     @OneToOne
     private Student student;
 
-    @OneToMany
-    private List<Exercise> segunda;
-
-    @OneToMany
-    private List<Exercise> terça;
-
-    @OneToMany
-    private List<Exercise> quarta;
-
-    @OneToMany
-    private List<Exercise> quinta;
-
-    @OneToMany
-    private List<Exercise> sexta;
-
 }

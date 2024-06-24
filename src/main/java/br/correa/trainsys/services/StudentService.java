@@ -45,6 +45,40 @@ public class StudentService {
         }
     }
 
+    public Student upateStudent(Long id, Student student) throws BadRequestException {
+        var studantToUpdate = repo.getReferenceById(id);
+        if (studantToUpdate.getId() != null){
+            if (student.getName() != null)
+                studantToUpdate.setName(student.getName());
+            if (student.getEmail() != null)
+                studantToUpdate.setEmail(student.getEmail());
+            if (student.getDate_birth() != null)
+                studantToUpdate.setDate_birth(student.getDate_birth());
+            if (student.getCpf() != null)
+                studantToUpdate.setCpf(student.getCpf());
+            if (student.getContact() != null)
+                studantToUpdate.setContact(student.getContact());
+            if (student.getCity() != null)
+                studantToUpdate.setCity(student.getCity());
+            if (student.getNeighborhood() != null)
+                studantToUpdate.setNeighborhood(student.getNeighborhood());
+            if (student.getStreet() != null)
+                studantToUpdate.setStreet(student.getStreet());
+            if (student.getState() != null)
+                studantToUpdate.setState(student.getState());
+            if (student.getCep() != null)
+                studantToUpdate.setCep(student.getCep());
+
+            return repo.save(studantToUpdate);
+        } else {
+            throw new BadRequestException(
+                    "Estudante não encontrado."
+            );
+        }
+
+
+    }
+
     public void delete(Long id) throws Exception {
         var StudentToDelete = repo.getReferenceById(id);
 
