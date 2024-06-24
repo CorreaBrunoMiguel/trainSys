@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity(name = "users")
@@ -35,7 +37,7 @@ public class User {
     @Column(nullable = false, unique = true, length = 14)
     @Size(max = 14)
     @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}",
-    message = "CPF deve estar no formato 000.000.000-00")
+        message = "CPF deve estar no formato 000.000.000-00")
     private String cpf;
 
     @Column(nullable = false)

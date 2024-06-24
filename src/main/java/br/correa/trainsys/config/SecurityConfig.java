@@ -41,6 +41,9 @@ public class SecurityConfig {
                             .requestMatchers(
                                     HttpMethod.POST, "auth/login"
                             ).permitAll()
+                            .requestMatchers(
+                                    "api/users", "api/users/{id}"
+                            ).permitAll() // Usado para facilitar teste
                             .anyRequest().authenticated()
                 )
                 .csrf(
