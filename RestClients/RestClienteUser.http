@@ -1,23 +1,48 @@
 POST http://localhost:8080/api/users
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0cmFpblN5cyIsInN1YiI6IjUiLCJleHAiOjE3MTkzMTQ4MDIsImlhdCI6MTcxOTIyODQwMn0.K8Bv4IHCxQDwgQuwfIVWvWULQrobRhejDHywlzJ3nfNUi-ONNpn9kkggyyqYhJMFqSBaEkOkj5dONpmWUE7QwVNQgIUbrS1P35asx7InpCMqzP15PWV7EOjxXpc0KHbyPACPlXVXYkQ1rE_UwgK5iezedtlqbEh9fU61swfH5oHsT07A02Ull21uTojVKpzije_WK6pjMiTJSoIPtWeHh-_4kDIWmd5g1rs5JaowormI-OtyUDaCZZjn8MclNu8kJyE9nuGkRKYCyAfiP8qMHS9DmmFC4BGwUUv2aYlZzXAfjM9KvT2neI-yXyNY8ClFsbMekgI4sGfUfNIVm7Lhgg
+Authorization: Bearer
 
 {
-  "name": "Julio Miguel Corrêa",
-  "email": "julioaluno.senai.com",
+  "name": "Bruno Miguel Corrêa",
+  "email": "bruno@estudante.senai",
   "date_birth": "1986-01-06",
-  "cpf": "111.555.333.44",
-  "password": "123",
-  "role": "ALUNO"
+  "cpf": "111.111.111.11",
+  "password": "1234"
 }
+###
 
+POST http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "name": "Leonardo Pereira dos Santos",
+  "email": "leo@estudante.senai",
+  "date_birth": "1998-11-18",
+  "cpf": "111.111.111.22",
+  "password": "2345"
+}
+###
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "name": "Miguela Corrêa",
+  "email": "miguel@estudante.senai",
+  "date_birth": "1976-11-06",
+  "cpf": "111.111.111.33",
+  "password": "3456"
+}
 ###
 
 GET http://localhost:8080/api/users
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0cmFpblN5cyIsInN1YiI6IjUiLCJleHAiOjE3MTkzMTQ5NjUsImlhdCI6MTcxOTIyODU2NX0.XamR7Nrt_YGSxSrFacOL11jtQZZp7Jl4DjYK31Z8UZaLksUFPXH3iT2WsdTIN6mbxbzeAzkppvtNrbQA99tPa0Wmny8uJnCtF6qefkMz9CYwVqQUh9Vo59PKp2MdwF13vVKLTeNwb8DBN7rfJFqRxDDpuQ1dwsOpd6wZwr3winlN5P6T8CzwSCAsoD7Oe3Io2GwNbAypWlmNwYJRXqIkaaHvT9LGzZgBLH-pUXe4INa0SsVt6CtrbbQ7BpfHWFPvA6XQFXojKEaXNUn-e_sTyapI_u3IZtcY7He2FeLFBLaxEBhtVYpWuvSnkUIMJGaQ0A5ePdgNcJwvuAsRu1g_fA
-
+Authorization: Bearer
 ###
 
-GET  http://localhost:8080/api/users/6
-
+GET  http://localhost:8080/api/users/3
+Authorization: Bearer
 ###
+
+PUT
