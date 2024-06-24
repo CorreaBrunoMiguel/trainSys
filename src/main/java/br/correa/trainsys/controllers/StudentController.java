@@ -1,12 +1,13 @@
 package br.correa.trainsys.controllers;
 
 import br.correa.trainsys.entities.Student;
+import br.correa.trainsys.entities.Student;
 import br.correa.trainsys.services.StudentService;
 import org.apache.coyote.BadRequestException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/students")
@@ -23,5 +24,15 @@ public class StudentController {
             @RequestBody Student student
             ) throws BadRequestException {
         return studentService.createStudent(student);
+    }
+
+    @GetMapping
+    public List<Student> getAll(){
+        return studentService.studentList();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Student> getById(@PathVariable Long id) throws BadRequestException {
+        return studentService.studentById(id);
     }
 }

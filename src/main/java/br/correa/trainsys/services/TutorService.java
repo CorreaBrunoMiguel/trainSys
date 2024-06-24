@@ -26,11 +26,11 @@ public class TutorService {
         return repo.save(tutor);
     }
 
-    public List<Tutor> userList(){
+    public List<Tutor> tutorList(){
         return repo.findAll();
     }
 
-    public Optional<Tutor> userById(Long id) throws BadRequestException {
+    public Optional<Tutor> tutorById(Long id) throws BadRequestException {
         var tutor = repo.findById(id);
         if (tutor.isEmpty()) {
             throw new BadRequestException(

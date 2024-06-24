@@ -1,6 +1,7 @@
 package br.correa.trainsys.services;
 
 import br.correa.trainsys.entities.Student;
+import br.correa.trainsys.entities.Student;
 import br.correa.trainsys.repositories.StudentRepository;
 import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
@@ -26,11 +27,11 @@ public class StudentService {
         return repo.save(student);
     }
 
-    public List<Student> userList(){
+    public List<Student> studentList(){
         return repo.findAll();
     }
 
-    public Optional<Student> userById(Long id) throws BadRequestException {
+    public Optional<Student> studentById(Long id) throws BadRequestException {
         var student = repo.findById(id);
         if (student.isEmpty()) {
             throw new BadRequestException(
@@ -41,6 +42,18 @@ public class StudentService {
             );
         } else {
             return student;
+        }
+    }
+
+    public void delete(Long id) throws Exception {
+        var StudentToDelete = repo.getReferenceById(id);
+
+        if (!StudentToDelete.getEmail().isEmpty()){
+            repo.delete(StudentToDelete);
+        } else {
+            throw new BadRequestException(
+                    "Exercicico não encontrado"
+            );
         }
     }
 

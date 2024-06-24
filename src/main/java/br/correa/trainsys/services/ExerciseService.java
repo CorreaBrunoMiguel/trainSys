@@ -49,16 +49,22 @@ public class ExerciseService {
             Exercise exercise) throws Exception {
         Exercise updatedExercise = repo.getReferenceById(id);
 
-        updatedExercise.setDescription(exercise.getDescription());
+        if (updatedExercise.getId() != null){
+            updatedExercise.setDescription(exercise.getDescription());
+        } else {
+            throw new BadRequestException(
+                    "Exercício não encontrado!"
+            );
+        }
 
         return repo.save(updatedExercise);
     }
 
     public void delete(Long id) throws Exception {
-        var exerciseTodelete = repo.getReferenceById(id);
+        var exerciseToDelete = repo.getReferenceById(id);
 
-        if (exerciseTodelete != null){
-            repo.delete(exerciseTodelete);
+        if (!exerciseToDelete.getDescription().isEmpty()){
+            repo.delete(exerciseToDelete);
         } else {
             throw new BadRequestException(
                     "Exercicico não encontrado"
