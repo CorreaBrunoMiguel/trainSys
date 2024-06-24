@@ -1,5 +1,6 @@
 POST http://localhost:8080/api/students
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0cmFpblN5cyIsInN1YiI6IjUiLCJleHAiOjE3MTkzMjY0OTksImlhdCI6MTcxOTI0MDA5OX0.WxWiIFnF4Zd_PrOXPguipryzh5NGDjTU4VtmjTnXt8ZGzn-kC7-Dt6VHgu7XMbJE4Enon9h8wv8V66D2SQEKExSN9tUPRNAwZ6ksI54rILTyLDEg5PQvUQroD0qkcNyt66rd6bropD0lVE7gEVsO9OzjyjVLsY5j2sMXRUOnI65FoCwj4k1949R9urXF34BET1k-w1oLdcNUst3cx4ci9kKmtQ_7Ofo0flnuNo-qMEyWu3BAYRNJFV5T2bv28fBd9Nro4-3i3eH6LByzBqgGqVWyDN5cTpAtLvBkjFsKbsLr8qmdTqPDchnroqO_dhAcht6uoeg-_KvRU5ebP5N7iQ
 
 {
   "name": "Bruno Miguel Corrêa",
@@ -8,7 +9,7 @@ Content-Type: application/json
   "cpf": "111.111.111.11",
   "contact": "+48 5555-55-55",
   "city": "Florianópolis",
-  "neighborhood": "Trindade",
+  "neighborhood": "Trinidad",
   "number": "215",
   "street": "José Sagás",
   "state": "SC",

@@ -21,4 +21,5 @@ public class Exercise {
     @Column(nullable = false)
     @Size(max = 255)
     private String description;
+
 }

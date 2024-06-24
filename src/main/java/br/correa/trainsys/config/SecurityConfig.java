@@ -47,6 +47,9 @@ public class SecurityConfig {
                             .requestMatchers(
                                     "api/students"
                             ).permitAll()
+                            .requestMatchers(
+                                    "api/exercises"
+                            ).permitAll()
                             .anyRequest().authenticated()
                 )
                 .csrf(
