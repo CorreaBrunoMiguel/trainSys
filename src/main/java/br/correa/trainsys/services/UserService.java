@@ -7,13 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UserService {
 
-    @Autowired
-    public UserRepository repo;
-    @Autowired
-    public BCryptPasswordEncoder passwordEncoder;
+
+    public final UserRepository repo;
+    public final BCryptPasswordEncoder passwordEncoder;
+
+    public UserService(UserRepository repo, BCryptPasswordEncoder passwordEncoder) {
+        this.repo = repo;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     // Criar Usuários
     public User createUser(User user) throws BadRequestException {
@@ -23,6 +30,28 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return repo.save(user);
     }
+
+    // Listar Usuários
+    public List<User> userList(){
+        return repo.findAll();
+    }
+
+    // Ler Usuário pelo Id
+    public Optional<User> userById(Long id) throws BadRequestException {
+        var user = repo.findById(id);
+        if (user.isEmpty()) {
+            throw new BadRequestException(
+                    String.format(
+                            "Usuário com id: %d não encontrado",
+                            id
+                    )
+            );
+        } else {
+            return user;
+        }
+    }
+
+
 
 
 }

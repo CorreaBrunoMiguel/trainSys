@@ -23,7 +23,6 @@ import java.time.Instant;
 public class TokenController {
 
     private final JwtEncoder jwtEncoder;
-
     private final TokenService token;
     private final UserRepository repo;
     @Autowired
@@ -58,7 +57,10 @@ public class TokenController {
             return ResponseEntity.ok(new LoginResponse(
                     jwtValue,
                     expireIn,
-                    "Usuário Logado com Sucesso"
+                    String.format(
+                            "Usuário %s logado com sucesso.",
+                            user.get().getName()
+                    )
             ));
         }
 

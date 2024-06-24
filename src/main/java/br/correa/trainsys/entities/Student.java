@@ -5,17 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
-@Entity(name = "users")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@NoArgsConstructor
+@Entity(name = "students")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,13 +36,34 @@ public class User {
     @Column(nullable = false, unique = true, length = 14)
     @Size(max = 14)
     @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}",
-        message = "CPF deve estar no formato 000.000.000-00")
+            message = "CPF deve estar no formato 000.000.000-00")
     private String cpf;
 
     @Column(nullable = false)
-    @Size(max = 16)
-    private String password;
+    @Size(max = 20)
+    private String contact;
 
-    @Column(nullable = false)
-    private Role role;
+    @Size(max = 50)
+    private String city;
+
+    @Size(max = 50)
+    private String neighborhood;
+
+    @Size(max = 30)
+    private String number;
+
+    @Size(max = 30)
+    private String street;
+
+    @Size(max = 2, message = "Exemplo SC para Santa Catarina")
+    private String state;
+
+    @Size(max = 20)
+    private String cep;
+
+    @ManyToOne
+    private Tutor tutor;
+
+    @OneToOne
+    private Workout workout;
 }
