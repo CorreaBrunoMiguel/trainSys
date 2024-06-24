@@ -4,6 +4,7 @@ import br.correa.trainsys.entities.Exercise;
 import br.correa.trainsys.entities.User;
 import br.correa.trainsys.services.ExerciseService;
 import org.apache.coyote.BadRequestException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,10 +49,8 @@ public class ExerciseController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteExercise(@PathVariable Long id) throws Exception {
+    public ResponseEntity<?> deleteExercise(@PathVariable Long id) throws Exception {
         exerciseService.delete(id);
-        System.out.println(String.format(
-                "Exercicio com id %d removido",id
-        ));
+        return ResponseEntity.ok(HttpStatus.NO_CONTENT);
     }
 }
