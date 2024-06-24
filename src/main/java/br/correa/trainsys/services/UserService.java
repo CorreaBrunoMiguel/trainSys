@@ -13,10 +13,14 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    @Autowired
-    public UserRepository repo;
-    @Autowired
-    public BCryptPasswordEncoder passwordEncoder;
+
+    public final UserRepository repo;
+    public final BCryptPasswordEncoder passwordEncoder;
+
+    public UserService(UserRepository repo, BCryptPasswordEncoder passwordEncoder) {
+        this.repo = repo;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     // Criar Usuários
     public User createUser(User user) throws BadRequestException {
@@ -46,6 +50,8 @@ public class UserService {
             return user;
         }
     }
+
+
 
 
 }

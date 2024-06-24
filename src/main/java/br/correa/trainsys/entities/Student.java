@@ -64,5 +64,6 @@ public class Student {
     @ManyToOne
     private Tutor tutor;
 
-    private Object workouts;
+    @OneToOne
+    private Workout workout;
 }
